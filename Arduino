@@ -1,0 +1,66 @@
+#include <SoftwareSerial.h>
+#include <TinyGPS.h>
+
+SoftwareSerial gpsSerial(10, 11); // RX, TX for GPS
+SoftwareSerial bluetoothSerial(8, 9); // RX, TX for Bluetooth
+
+#define trigPin 2 // Ultrasonic sensor trigger pin
+#define echoPin 3 // Ultrasonic sensor echo pin
+
+int emergencyButtonPin = 7; // Pin for emergency button
+
+TinyGPS gps;
+
+void setup() {
+  Serial.begin(9600);
+  gpsSerial.begin(9600);
+  bluetoothSerial.begin(9600);
+
+  pinMode(trigPin, OUTPUT);
+  pinMode(echoPin, INPUT);
+  pinMode(emergencyButtonPin, INPUT_PULLUP);
+
+  attachInterrupt(digitalPinToInterrupt(emergencyButtonPin), emergencyAlert, FALLING);
+}
+
+void loop() {
+  // Check for obstacles using ultrasonic sensor
+  float distance = getUltrasonicDistance();
+  if (distance < 30) {
+    sendBluetoothAlert("Obstacle detected!");
+  }
+
+  // Read GPS data
+  while (gpsSerial.available() > 0) {
+    if (gps.encode(gpsSerial.read())) {
+      float latitude = gps.location.lat();
+      float longitude = gps.location.lng();
+      sendGPSData(latitude, longitude);
+    }
+  }
+}
+
+float getUltrasonicDistance() {
+  digitalWrite(trigPin, LOW);
+  delayMicroseconds(2);
+  digitalWrite(trigPin, HIGH);
+  delayMicroseconds(10);
+  digitalWrite(trigPin, LOW);
+
+  return pulseIn(echoPin, HIGH) * 0.034 / 2; // Convert to centimeters
+}
+
+void sendGPSData(float latitude, float longitude) {
+  // Format GPS data and send it via Bluetooth
+  String gpsData = "GPS: " + String(latitude, 6) + "," + String(longitude, 6);
+  sendBluetoothAlert(gpsData);
+}
+
+void sendBluetoothAlert(String message) {
+  bluetoothSerial.println(message);
+}
+
+void emergencyAlert() {
+  sendBluetoothAlert("Emergency! User needs assistance.");
+  // Add any additional emergency actions here
+}
