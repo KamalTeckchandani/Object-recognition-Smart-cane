@@ -11,7 +11,7 @@ Equipped with ultrasonic sensors that continuously monitor the surroundings. If 
 📸 Object Recognition via Smartphone App
 A mounted camera on the cane captures an image when a button is pressed. The image is transmitted via Bluetooth to a custom Camera APK installed on a smartphone.
 
-🧠 AI-Based Object Detection
+🧠 Object Detection
 The smartphone app processes the image using an object recognition algorithm, and the name of the detected object is spoken out loud, helping the user identify what's in front of them.
 
 🔗 Bluetooth Connectivity
