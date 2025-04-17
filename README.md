@@ -1,6 +1,8 @@
 Object Recognition System Integrated with a Smart Cane
 Overview
-This project is a Smart Cane developed to assist visually impaired individuals by detecting nearby obstacles and recognizing objects in their path. The system combines ultrasonic sensors, Arduino logic, Bluetooth communication, and a camera module connected to a smartphone application for real-time object recognition and voice feedback.
+This project is a Smart Cane developed to assist visually impaired individuals by detecting nearby obstacles and recognising objects in their path. The system combines ultrasonic sensors, Arduino logic, Bluetooth communication, and a camera module connected to a smartphone application for real-time object recognition and voice feedback.
+
+This project demonstrates Iot product development lifecycle experience, including hardware integration, embedded programming, mobile app connectivity, and real-world usability testing. Additionally, it reflects core product management skills such as user-centred design, feature prioritisation, prototyping, and stakeholder collaboration.
 
 Features
 🔊 Obstacle Detection
