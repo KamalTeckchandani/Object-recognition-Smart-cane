@@ -1,23 +1,23 @@
-Object Recognition System Integrated with a Smart Cane
+**Object Recognition System Integrated with a Smart Cane**
 Overview
 This project is a Smart Cane developed to assist visually impaired individuals by detecting nearby obstacles and recognising objects in their path. The system combines ultrasonic sensors, Arduino logic, Bluetooth communication, and a camera module connected to a smartphone application for real-time object recognition and voice feedback.
 
 This project demonstrates Iot product development lifecycle experience, including hardware integration, embedded programming, mobile app connectivity, and real-world usability testing. Additionally, it reflects core product management skills such as user-centred design, feature prioritisation, prototyping, and stakeholder collaboration.
 
-Features
-🔊 Obstacle Detection
+**Features**
+🔊 **Obstacle Detection**
 Equipped with ultrasonic sensors that continuously monitor the surroundings. If an object is detected within a specific range, the cane responds with a vibration and/or buzzer alert to notify the user.
 
-📸 Object Recognition via Smartphone App
+📸 **Object Recognition via Smartphone App**
 A mounted camera on the cane captures an image when a button is pressed. The image is transmitted via Bluetooth to a custom Camera APK installed on a smartphone.
 
-🧠 Object Detection
+🧠 **Object Detection**
 The smartphone app processes the image using an object recognition algorithm, and the name of the detected object is spoken out loud, helping the user identify what's in front of them.
 
-🔗 Bluetooth Connectivity
+🔗 **Bluetooth Connectivity**
 Wireless communication enables smooth interaction between the cane's hardware and the mobile application.
 
-Technologies Used
+**Technologies Used**
 Arduino Uno: Microcontroller for sensor and component management.
 
 Ultrasonic Sensors: Measure distance to obstacles.
@@ -32,7 +32,7 @@ Android (Camera APK): Receives image, processes it, and speaks out the identifie
 
 Object Recognition (OpenCV/ML): Implemented in the APK to identify and label objects.
 
-How It Works
+**How It Works**
 Obstacle Detection
 
 The ultrasonic sensor detects any object within a set distance.
@@ -52,9 +52,17 @@ Assists visually impaired individuals in understanding and navigating their envi
 
 Can be expanded into smart mobility and home navigation tools.
 
-Future Enhancements
+**Future Enhancements**
 GPS-based location awareness.
 
 Real-time video streaming and recognition.
 
 Voice command and AI assistant integration.
+
+
+
+📬 **Contact If you like the project or want to collaborate, feel free to connect:**
+
+GitHub: (https://github.com/KamalTeckchandani)
+
+LinkedIn: https://www.linkedin.com/in/kamal-teckchandani/
