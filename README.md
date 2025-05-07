@@ -33,7 +33,7 @@ Bluetooth Module: Sends images to smartphone.
 
 Android (Camera APK): Receives image, processes it, and speaks out the identified object.
 
-Object Recognition (OpenCV/ML): Implemented in the APK to identify and label objects.
+Object Recognition (Clarifi): Implemented in the APK to identify and label objects.
 
 **How It Works**
 
